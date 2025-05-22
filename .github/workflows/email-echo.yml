@@ -1,6 +1,16 @@
+name: Email Echo Workflow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # allows manual trigger from GitHub UI
+
 jobs:
   test:
+    runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: 23f1000148@ds.study.iitm.ac.in
-        run: echo "Hello, world!"
-      
+        run: echo "Hello, world from 23f1000148@ds.study.iitm.ac.in!"
